@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+</head>
+<body>
+    <h1>Student List</h1>
+    <ul>
+        {% for student in students %}
+            <li>
+                <a href="{% url 'details' student.id %}">{{ student.name }}</a> - Age: {{ student.age }} - Email: {{ student.email }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Add Student</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ student_form.as_p }}
+        <button type="submit">Add Student</button>
+    </form>
+
+    <p><a href="{% url 'courses' %}">Courses</a></p>
+</body>
+</html>

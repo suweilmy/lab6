@@ -8,7 +8,7 @@
     <ul>
         {% for student in students %}
             <li>
-                <a href="{% url 'details' student.id %}">{{ student.name }}</a> - Age: {{ student.age }} - Email: {{ student.email }}
+                <a href="{% url 'details' student.id %}">{{ student.name }}</a> - Age: {{ student.age }} - Email: {{ student.email }} - Nationality: {{ student.nationality }}
             </li>
         {% endfor %}
     </ul>
